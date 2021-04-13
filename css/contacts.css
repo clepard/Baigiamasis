@@ -1,0 +1,515 @@
+:root{
+    --darkgray-background-color: #333333;
+    --white-background-color:#fff;
+    --form-background-color: #f0f0f0;
+    --blacktxt-color:#000000;
+    --whitetxt-color:#fff;
+    --button-background-color:#ff8c00;
+    --footer-background-color:#333333;
+    --footertxt-color:#737373;
+    --title-font-family:'Lato', sans-serif;
+    --parag-font-family: 'Space Grotesk', sans-serif;
+}
+
+
+*{
+    margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+body{
+    background-color:var(--darkgray-background-color);
+    animation: transitionIn 0.1s;
+}
+
+.container{
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    display: flex;
+    flex-flow:column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container.active{
+    right:300px;
+}
+
+
+/* ##########       ##############               header         ###########           ########## */
+
+
+.container header{
+    position:relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 2rem 1rem 25rem;
+    width: 100%;
+    height: 100%;
+    background-color:var(--white-background-color);
+    z-index: 1;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: var(--title-font-family);
+    text-transform: uppercase;
+    color: var(--darkgray-background-color);
+}
+.nav-menu{
+    list-style: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    top:100px;
+    width: 100%;
+    font-size: 1.5rem;
+    font-family: var(--title-font-family);
+    color: var(--blacktxt-color);
+}
+.nav-menu li:nth-child(4) a{
+    text-decoration:underline #dadada;
+}
+.nav-menu a {
+    text-decoration: none;
+    color: var(--blacktxt-color);
+    text-transform: uppercase;
+}
+
+.nav-menu a:hover{
+    color: rgb(170, 169, 169);
+    transition: 0.3s;
+}
+
+.menu-button{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0px 25px;
+    visibility:hidden;
+    cursor: pointer;
+    background: url("../images/hamburger-menu.png");
+    background-repeat: no-repeat;
+    background-size: 64px;
+    background-position: center;
+}
+.menu-button.active{
+    background: url("../images/close.png");
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: center;
+}
+
+/* ##########       ##############               photo container        ###########           ########## */
+
+.photo-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 930px;
+    width: 100%;
+}
+.burger-menu{
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    top:-250px;
+    height: 250px;
+    width: 100%;
+    visibility: hidden;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--darkgray-background-color);
+    transition: 300ms ease-out;
+}
+.burger-menu.active{
+    visibility: visible;
+    top:0;
+}
+.drop-list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 35px;
+}
+.drop-list a{
+    list-style: none;
+    color:var(--whitetxt-color);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.drop-list a:hover{
+    color: #707070;
+}
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--title-font-family);
+    gap: 1.875rem;
+    padding-bottom: 6rem;
+}
+
+.main-text{
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    color: var(--whitetxt-color);
+    
+}
+
+.below-text{
+    display: flex;
+    gap: 0px 10px;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: var(--whitetxt-color);
+}
+
+.below-text a{
+    color: var(--whitetxt-color);
+    
+}
+
+/* ##########       ##############               address info       ###########           ########## */
+
+.box-column{
+    font-family: var(--parag-font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    gap: 15px;
+}
+
+.box-column img{
+    height: 70px;
+}
+
+/* ##########       ##############               contact form          ###########           ########## */
+
+
+
+.site-contact-section{
+    padding: 5em 0;
+    background-color:var(--white-background-color);
+}
+
+.div-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+.row-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+    font-family: var(--title-font-family);
+}
+
+
+.map iframe{
+    gap: 10px;
+    border-radius: 5px;
+    width: 500px;
+    height: 450px;
+}
+
+.form-container{
+    width: 500px;
+    height: 100%;
+    padding: 20px;
+    background-color:var(--form-background-color);
+    border-radius: 5px;
+    
+}
+.row{
+    display: flex;
+    width: 100%;
+}
+
+.form-control{
+    padding: 5px 5px;
+    font-size: 1rem;
+    border: none;
+    height: auto;
+    background-color: var(--white-background-color);
+    border-radius: 3px;
+}
+
+.first-name{
+    width: 100%;
+    padding-right: 5px;
+}
+.last-name{
+    width: 100%;
+    padding-left: 5px;
+}
+
+.column{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+.msgn-column textarea{
+    resize: none;
+}
+
+.send-message-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    width: 150px;
+    height: 30px;
+    border: none;
+    background-color:var(--button-background-color);
+    color: #020202;
+    border-radius: 5px;
+    cursor: pointer;
+}
+::-webkit-input-placeholder{
+    color: #cccccc;
+}
+
+/*-------------------------------------------------footer--------------------------------------------------*/
+
+
+.text-color-white{
+    color:var(--whitetxt-color);
+}
+.text-color-grey{
+    color:var(--footertxt-color);
+}
+
+.site-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--footer-background-color);
+    width: 100%;
+    height: 500px;
+    padding: 1rem 15rem 1rem 20rem;
+    font-family: var(--title-font-family);
+}
+.footer-container{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.second-container{
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    width: 100%;
+    padding: 3rem 0rem 0rem 0rem;
+    height: 100%;
+}
+.text-container{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+.nav-container h3{
+    padding: 0px 10px;
+}
+
+.column-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    width: 300px;
+}
+.nav-home{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+.nav-home a{
+    color:var(--footertxt-color);
+    
+}
+.subscribe{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+
+.subscribe input{
+    height: 30px;
+    width: 70%;
+}
+.subscribe button{
+    height: 30px;
+    width: 75px;
+    background-color:var(--button-background-color);
+    border:none;
+    cursor: pointer;
+}
+
+.footer{
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    bottom: 0;
+    padding: 50px 0px 30px 0px;
+}
+.footer li img{
+   width: 25px;
+   
+}
+.footer li{
+    transition: 0.2s;
+}
+.footer li:hover{
+    transform: matrix(1.5, 0, 0, 1.5, 0, -10);
+}
+.message{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+@keyframes transitionIn{
+    from{
+        opacity: 0;
+        
+    }
+    to{
+      opacity: 1;
+      
+    }
+}
+/* ##########       ##############               media queries       ###########           ########## */
+
+
+@media only screen and (max-width: 1400px) {
+    .container header{
+        padding: 1rem 2rem 1rem 4rem;;
+    }
+    .menu-button{
+        visibility: visible;
+    }
+    
+    .nav-menu{
+        display: none;
+        position:absolute;
+        visibility: hidden;
+    }
+    
+    .container{
+        padding: 0rem 0rem;
+    }
+    .main-text{
+        font-size: calc(1.3em + 1vw );
+    }
+    .text{
+        padding: 0rem 2rem 2rem 4rem;
+    }
+    .row-container{
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .column-nav{
+        width: 100%;
+    }
+
+    .aft-container{
+        flex-direction: column;
+    }
+    .second-container{
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .site-footer{
+        padding: 1rem 2rem 1rem 2rem;
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .container header{
+        padding: 1rem 2rem 1rem 2rem;
+    }
+    .main-text{
+        font-size: 1rem;
+    }
+    .photo-container{
+        height: 100vh;
+    }
+    .row-container{
+        flex-direction: column;
+    }
+    .map iframe{
+        width: 100%;
+        height: 350px;
+    }
+    .form-container{
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+    .box-column{
+        height: auto;
+        width: auto;
+    }
+    
+
+    .form-control{
+        width: 100%;
+    }
+    .column{
+        height: 50px;
+        gap: 0px;
+    }
+    .msgn-column{
+        width: 100%;
+        height: 100%;
+    }
+
+    .aft-container{
+        flex-direction: column;
+    }
+    .second-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .burger-menu.active{
+        display: none;
+    }
+  }
